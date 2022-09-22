@@ -1,11 +1,11 @@
-import RecipeListItem from "./RecipeListItem";
+// import RecipeListItem from "./RecipeListItem";
 
-function RecipeList(props) {
-  return (
-    <ul>
-      <RecipeListItem />
-    </ul>
-  )
-}
+// function RecipeList(props) {
+//   return (
+//     <ul>
+//       <RecipeListItem />
+//     </ul>
+//   )
+// }
 
-export default RecipeList;
+// export default RecipeList;

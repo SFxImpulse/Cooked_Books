@@ -1,5 +1,5 @@
 import { useQuery, gql } from '@apollo/client';
-
+import Navigation from './components/Navigation';
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
     const { error, loading, data } = useQuery(GET_INGREDIENTS);
   
     if (loading) return <p>Loading...</p>
-    if (error) return <p>Error :( </p>
+    if (error) return <p>Error :(</p>
   
     return data.ingredients.map(({ id, name, type, foodGroup, image }) => (
       <div key={id}>
@@ -35,6 +35,7 @@ function App() {
 
   return (
     <div>
+      <Navigation />
       <h2>Ingredients List:</h2>
       <br />
       <DisplayIngredients />

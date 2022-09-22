@@ -1,0 +1,9 @@
+@import '../styles/variables.scss';
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  padding: 2em;
+  background-color: orange;
+  justify-content: space-around;
+}
