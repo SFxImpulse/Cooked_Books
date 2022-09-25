@@ -1,0 +1,12 @@
+.recipe-list-header {
+  display: flex;
+  justify-content: center;
+  margin-top: 124px;
+}
+
+.recipe-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 3em;
+}

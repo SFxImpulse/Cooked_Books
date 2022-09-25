@@ -1,11 +1,24 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBlender } from '@fortawesome/free-solid-svg-icons'
+
 import './Navigation.scss';
 
 function Navigation(props) {
   return (
     <nav className="navbar">
-      <h2 className='text--bold'>Recipies</h2>
-      <h2 className='text--bold'>Grocery List</h2>
-      <h2 className='text--bold'>Saved Recipies</h2>
+      <FontAwesomeIcon icon={faBlender} className='logo' />
+      <h2 className='nav-text'>Cookanizer</h2>
+      <section className='nav-item-container'>
+        <button className='nav-button'>
+          <h2 className='nav-item text--bold'>Recipies</h2>
+        </button>
+        <button className='nav-button'>
+          <h2 className='nav-item text--bold'>Favourites</h2>
+        </button>
+        <button className='nav-button'>
+          <h2 className='nav-item text--bold'>Grocery List</h2>
+        </button>
+      </section>
     </nav>
   )
 }
