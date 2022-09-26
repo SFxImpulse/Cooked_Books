@@ -1,5 +1,5 @@
-import Navigation from './components/Navigation';
-import RecipeList from './components/RecipeList';
+import Navigation from "./components/Navigation";
+import RecipeList from "./components/RecipeList";
 
 function App() {
 

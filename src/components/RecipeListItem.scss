@@ -1,3 +1,5 @@
+@import '../styles/animations.scss';
+
 .recipe-container {
   display: flex;
   flex-direction: column;
@@ -10,11 +12,17 @@
   border-radius: 10%;
   justify-content: center;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   .recipe-img {
     border-style: solid;
     border-color: orange;
     border-width: 0.5em;
     border-radius: 10%;
+    width: 380px;
+    height: 300px;
   }
 
   .recipe-name {

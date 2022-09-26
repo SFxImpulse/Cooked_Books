@@ -1,23 +1,35 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBlender } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBlender } from "@fortawesome/free-solid-svg-icons"
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 
-import './Navigation.scss';
+import "./Navigation.scss";
 
 function Navigation(props) {
+
   return (
     <nav className="navbar">
-      <FontAwesomeIcon icon={faBlender} className='logo' />
-      <h2 className='nav-text'>Cookanizer</h2>
-      <section className='nav-item-container'>
-        <button className='nav-button'>
-          <h2 className='nav-item text--bold'>Recipies</h2>
-        </button>
-        <button className='nav-button'>
-          <h2 className='nav-item text--bold'>Favourites</h2>
-        </button>
-        <button className='nav-button'>
-          <h2 className='nav-item text--bold'>Grocery List</h2>
-        </button>
+      <FontAwesomeIcon icon={faBlender} className="nav-logo" />
+      <h2 className="nav-text">Cooked Books</h2>
+      <p className="nav-slogan text--extra-bold">( These Books are Cooked! )</p>
+      <section className="nav-item-container">
+        <h2 
+          className="nav-item text--bold"
+          onClick={() => console.log("Clicked!")}
+        >
+          Recipies
+        </h2>
+        <h2 
+          className="nav-item text--bold"
+          onClick={() => console.log("Clicked!")}
+        >
+          Favourites
+        </h2>
+        <h2 
+          className="nav-item text--bold"
+          onClick={() => console.log("Clicked!")}
+        >
+          Grocery List
+        </h2>
       </section>
     </nav>
   )

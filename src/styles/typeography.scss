@@ -2,6 +2,7 @@ $weights: (
   light: 200,
   regular: 300,
   bold: 500,
+  extra-bold: 800,
 );
 
 @each $weight, $value in $weights {
