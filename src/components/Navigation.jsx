@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBlender } from "@fortawesome/free-solid-svg-icons"
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
+// import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 
 import "./Navigation.scss";
 
