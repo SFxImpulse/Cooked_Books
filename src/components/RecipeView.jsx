@@ -1,5 +1,7 @@
 import './RecipeView.scss';
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPlus, faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function RecipeView(props) {
 
@@ -7,7 +9,7 @@ function RecipeView(props) {
     <div className="recipe-view-background">
       <div className="recipe-view-container">
         <div className="closeBtn">
-          <button onClick={() => props.closeRecipeView(false)}> X </button>
+          <button onClick={() => props.closeRecipeView(false)}><FontAwesomeIcon icon={faXmark} /></button>
         </div>
         <div className="recipe-view-title">
           <h1>Pancakes</h1>
@@ -28,13 +30,13 @@ function RecipeView(props) {
             <h2>Ingredients</h2>
             <ul>
               <li>
-                <button> + </button>Milk
+                <button><FontAwesomeIcon icon={faPlus} className="add-btn" /></button>Milk
               </li>
               <li>
-                <button> + </button>Eggs
+                <button><FontAwesomeIcon icon={faPlus} className="add-btn" /></button>Eggs
               </li>
               <li>
-                <button> + </button>Flour
+                <button><FontAwesomeIcon icon={faPlus} className="add-btn" /></button>Flour
               </li>
             </ul>
           </div>

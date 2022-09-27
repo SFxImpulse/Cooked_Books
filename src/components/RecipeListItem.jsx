@@ -18,7 +18,7 @@ function RecipeListItem(props) {
           setRecipe(true);
         }}></img>
         <div className="recipe-content-container">
-        <h2 className="recipe-name text--extra-bold">Pancakes</h2>
+        <h2 className="recipe-name text--bold">Pancakes</h2>
           <FontAwesomeIcon icon={faPlus} className="add-btn" />
           {!favourite && <FontAwesomeIcon icon={faStar} className="favourite-btn-false" onClick={() => {setFavourite(true)}} />}
           {favourite && <FontAwesomeIcon icon={faStar} className="favourite-btn-true" onClick={() => {setFavourite(false)}} />}
