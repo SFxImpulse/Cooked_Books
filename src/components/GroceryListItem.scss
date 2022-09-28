@@ -1,0 +1,25 @@
+@import "../styles/animations.scss";
+
+.grocery-list-item {
+  display: flex;
+  align-items: center;
+  border-bottom: solid;
+  border-width: 4px;
+
+  .grocery-list-item-x {
+    width: 36px;
+    height: 36px;
+    margin-right: 10px;
+    margin-top: 6px;
+    background-color: #F9D2AB;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+      animation-name: grocery-list-button-transition;
+      animation-duration: 0.3s;
+      background-color: #FDB868;
+    }
+  }
+}

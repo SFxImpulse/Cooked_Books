@@ -1,6 +1,7 @@
 import Home from './components/Home';
 import Navigation from "./components/Navigation";
 import RecipeList from "./components/RecipeList";
+import GroceryList from './components/GroceryList';
 import { useState } from "react";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         favourite={favourite}
         setFavourite={setFavourite}
       />}
+        {mode === 2 && <GroceryList />}
     </div>
   );
 }

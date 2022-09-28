@@ -7,7 +7,7 @@ function Home(props) {
         <h1 className="welcome-text text--bold">Welcome to Cooked Books!</h1>
       </div>
       <div className="nav-item-container">
-        <h2 
+        <h2
           className="nav-item text--bold"
           onClick={() => {
             props.setMode(1);
@@ -16,17 +16,23 @@ function Home(props) {
         >
           Recipies
         </h2>
-        <h2 
+        <h2
           className="nav-item text--bold"
-          onClick={() => console.log("Clicked!")}
-        >
-          Favourites
-        </h2>
-        <h2 
-          className="nav-item text--bold"
-          onClick={() => console.log("Clicked!")}
+          onClick={() => {
+            props.setMode(2);
+            props.setNav(true);
+          }}
         >
           Grocery List
+        </h2>
+        <h2
+          className="nav-item text--bold"
+          // onClick={() => {
+          //   props.setMode(3);
+          //   props.setNav(true);
+          // }}
+        >
+          Favourites
         </h2>
       </div>
     </section>
