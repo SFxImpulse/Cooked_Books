@@ -1,11 +1,18 @@
+import './Home.scss';
+
 function Home(props) {
   return (
-    <div>
-      <section className="home-content-container">
-        This is the home page.
+    <section className="home-content-container">
+      <div className="welcome-container">
+        <h1 className="welcome-text text--bold">Welcome to Cooked Books!</h1>
+      </div>
+      <div className="nav-item-container">
         <h2 
           className="nav-item text--bold"
-          onClick={() => console.log("Clicked!")}
+          onClick={() => {
+            props.setMode(1);
+            props.setNav(true);
+          }}
         >
           Recipies
         </h2>
@@ -21,9 +28,8 @@ function Home(props) {
         >
           Grocery List
         </h2>
-      </section>
-    </div>
-    
+      </div>
+    </section>
   )
 }
 

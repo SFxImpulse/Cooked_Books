@@ -17,6 +17,7 @@
     width: 106px;
     height: 58px;
     margin-top: 0.5em;
+    cursor: pointer;
   }
 
   .nav-text {
@@ -52,33 +53,35 @@
         background-color: #FBC96C;
       }
     }
+  }
 
-    .nav-search-bar {
-      height: 42px;
-      width: 450px;
-      margin-right: 1.5em;
-      border: none;
-      background-color: #FBC96C;
-      border-radius: 20px;
-      padding-left: 1em;
-    }
-
-    .nav-search-button {
-      width: 30px;
-      height: 30px;
-      margin-right: 2.5em;
-
-      &:hover {
-        color: darkslategray;
-        cursor: pointer;
-      }
+  @media only screen and (max-width: 1250px) {
+    .nav-slogan {
+      visibility: hidden;
+      font-size: 0px;
     }
   }
 
-  @media only screen and (max-width: 1210px) {
-    .nav-slogan {
+  @media only screen and (max-width: 955px) {
+    .nav-text {
       visibility: hidden;
-      font-size: 1px;
+      font-size: 0px;
+    }
+  }
+
+  @media only screen and (max-width: 670px) {
+    .nav-logo {
+      width: 86px;
+      height: 42px;
+      margin-top: 1em;
+    }
+
+    .nav-item-container {
+      margin-top: 0.5em;
+
+      .nav-item {
+        font-size: 20px;
+      }
     }
   }
 }
