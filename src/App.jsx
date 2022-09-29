@@ -2,6 +2,7 @@ import Home from './components/Home';
 import Navigation from "./components/Navigation";
 import RecipeList from "./components/RecipeList";
 import GroceryList from './components/GroceryList';
+import FavouritesList from './components/FavouritesList';
 import { useState } from "react";
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         setMode={setMode}
         nav={nav}
         setNav={setNav}
+        recipe={recipe}
+        setRecipe={setRecipe}
       />}
       {mode === 1 && <RecipeList
         recipe={recipe}
@@ -31,7 +34,14 @@ function App() {
         favourite={favourite}
         setFavourite={setFavourite}
       />}
-        {mode === 2 && <GroceryList />}
+      {mode === 2 && <GroceryList 
+      />}
+      {mode === 3 && <FavouritesList
+        recipe={recipe}
+        setRecipe={setRecipe}
+        favourite={favourite}
+        setFavourite={setFavourite}
+      />}
     </div>
   );
 }

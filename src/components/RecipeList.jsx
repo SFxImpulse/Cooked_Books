@@ -1,4 +1,5 @@
 import RecipeListItem from "./RecipeListItem";
+
 import "./RecipeList.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,7 +21,7 @@ function RecipeList(props) {
             e.target.placeholder = "";
           }}
           onBlur={(e) => {
-            e.target.placeholder = "Peas, lettuce help you."
+            e.target.placeholder = "Peas, lettuce help you..."
           }}
         />
         <FontAwesomeIcon

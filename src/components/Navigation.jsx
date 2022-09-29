@@ -19,6 +19,7 @@ function Navigation(props) {
           onClick={() => {
             props.setMode(1);
             props.setNav(true);
+            props.setRecipe(false)
           }}
         >
           Recipies
@@ -28,16 +29,18 @@ function Navigation(props) {
           onClick={() => {
             props.setMode(2);
             props.setNav(true);
+            props.setRecipe(false)
           }}
         >
           Grocery List
         </h2>
         <h2
           className="nav-item text--bold"
-          // onClick={() => {
-          //   props.setMode(3);
-          //   props.setNav(true);
-          // }}
+          onClick={() => {
+            props.setMode(3);
+            props.setNav(true);
+            props.setRecipe(false)
+          }}
         >
           Favourites
         </h2>

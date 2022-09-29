@@ -1,0 +1,40 @@
+import FavouritesListItem from "./FavouritesListItem";
+
+import './FavouritesList.scss';
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+
+function FavouritesList(props) {
+  return(
+    <div className="favourites-list-container">
+      <section className="favourites-list-search">
+        <input
+          className="favourites-list-search-bar"
+          placeholder="Find the Apple of your Ribeye..."
+          onFocus={(e) => {
+            e.target.placeholder = "";
+          }}
+          onBlur={(e) => {
+            e.target.placeholder = "What the Fork is for Dinner?!"
+          }}
+        />
+        <FontAwesomeIcon
+          icon={faMagnifyingGlass}
+          className="favourites-list-search-icon"
+        />
+      </section>
+      <h1 className="favourites-list-header text--bold">Favourites List</h1>
+      <ul className="favourites-list">
+        <FavouritesListItem
+          recipe={props.recipe}
+          setRecipe={props.setRecipe}
+          favourite={props.favourite}
+          setFavourite={props.setFavourite}
+        />
+      </ul>
+    </div>
+  )
+};
+
+export default FavouritesList;

@@ -27,10 +27,10 @@ function Home(props) {
         </h2>
         <h2
           className="nav-item text--bold"
-          // onClick={() => {
-          //   props.setMode(3);
-          //   props.setNav(true);
-          // }}
+          onClick={() => {
+            props.setMode(3);
+            props.setNav(true);
+          }}
         >
           Favourites
         </h2>
