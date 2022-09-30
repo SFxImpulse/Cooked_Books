@@ -7,14 +7,14 @@ function Home(props) {
         <h1 className="welcome-text text--bold">Welcome to Cooked Books!</h1>
       </div>
       <div className="nav-item-container">
-        <h2
+      <h2
           className="nav-item text--bold"
           onClick={() => {
             props.setMode(1);
             props.setNav(true);
           }}
         >
-          Recipies
+          About
         </h2>
         <h2
           className="nav-item text--bold"
@@ -23,12 +23,21 @@ function Home(props) {
             props.setNav(true);
           }}
         >
-          Grocery List
+          Recipies
         </h2>
         <h2
           className="nav-item text--bold"
           onClick={() => {
             props.setMode(3);
+            props.setNav(true);
+          }}
+        >
+          Grocery List
+        </h2>
+        <h2
+          className="nav-item text--bold"
+          onClick={() => {
+            props.setMode(4);
             props.setNav(true);
           }}
         >

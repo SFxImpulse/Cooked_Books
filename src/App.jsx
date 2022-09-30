@@ -28,15 +28,15 @@ function App() {
         recipe={recipe}
         setRecipe={setRecipe}
       />}
-      {mode === 1 && <RecipeList
+      {mode === 2 && <RecipeList
         recipe={recipe}
         setRecipe={setRecipe}
         favourite={favourite}
         setFavourite={setFavourite}
       />}
-      {mode === 2 && <GroceryList 
+      {mode === 3 && <GroceryList 
       />}
-      {mode === 3 && <FavouritesList
+      {mode === 4 && <FavouritesList
         recipe={recipe}
         setRecipe={setRecipe}
         favourite={favourite}
