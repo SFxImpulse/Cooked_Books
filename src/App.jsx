@@ -1,5 +1,6 @@
 import Home from './components/Home';
 import Navigation from "./components/Navigation";
+import About from './components/About';
 import RecipeList from "./components/RecipeList";
 import GroceryList from './components/GroceryList';
 import FavouritesList from './components/FavouritesList';
@@ -28,14 +29,14 @@ function App() {
         recipe={recipe}
         setRecipe={setRecipe}
       />}
+      {mode === 1 && <About />}
       {mode === 2 && <RecipeList
         recipe={recipe}
         setRecipe={setRecipe}
         favourite={favourite}
         setFavourite={setFavourite}
       />}
-      {mode === 3 && <GroceryList 
-      />}
+      {mode === 3 && <GroceryList />}
       {mode === 4 && <FavouritesList
         recipe={recipe}
         setRecipe={setRecipe}
