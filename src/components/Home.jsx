@@ -4,7 +4,8 @@ function Home(props) {
   return (
     <section className="home-content-container">
       <div className="welcome-container">
-        <h1 className="welcome-text text--bold">Welcome to Cooked Books!</h1>
+        <h1 className="text--bold">Welcome to Cooked Books!</h1>
+        <p className="text--regular">Start browsing our recipies and create your grocery list!</p>
       </div>
       <div className="nav-item-container">
       <h2

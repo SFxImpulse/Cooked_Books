@@ -3,7 +3,7 @@
 
 .navbar {
   padding: 0.5em;
-  background-color: #ffa500;
+  background-color: #EEAF4A;
   z-index: 2;
   top: 0;
   left: 0;
@@ -37,7 +37,7 @@
   
   .nav-item-container {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     
     .nav-item {

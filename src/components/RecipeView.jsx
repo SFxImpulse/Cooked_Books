@@ -1,5 +1,4 @@
 import './RecipeView.scss';
-import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus, faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
