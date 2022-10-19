@@ -22,7 +22,7 @@ function App() {
   const setNav = (nav) => setState((prev) => ({ ...prev, nav }));
   const setMode = (mode) => setState((prev) => ({ ...prev, mode }));
   const setRecipe = (recipe) => setState((prev) => ({ ...prev, recipe }));
-
+  // const setFavourites = (favourites) => setState((prev) => ({ ...prev, favourites }));
 
   useEffect(() => {
     Promise.all([
@@ -40,6 +40,21 @@ function App() {
       console.log(state);
     });
   }, []);
+
+  const getRecipies = (state, recipe) => {
+
+    const output = [];
+
+    const recipeObj = state.recipies.find(r => r.name === recipe)
+
+    // console.log(recipeObj);
+
+    if (!recipeObj) {
+      return [];
+    }
+  }
+
+  // console.log(getRecipies(state, "Pancakes"));
 
   return (
     <div>
@@ -61,12 +76,15 @@ function App() {
       {state.mode === 2 && <RecipeList
         recipe={state.recipe}
         setRecipe={setRecipe}
-        recipies={state.recipies}
+        // favourite={state.favourites}
+        // setFavourite={setFavourites}
       />}
       {state.mode === 3 && <GroceryList />}
       {state.mode === 4 && <FavouritesList
         recipe={state.recipe}
         setRecipe={setRecipe}
+        // favourite={state.favourites}
+        // setFavourite={setFavourites}
       />}
     </div>
   );
