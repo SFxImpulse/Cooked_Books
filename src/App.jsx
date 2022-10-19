@@ -4,44 +4,69 @@ import About from './components/About';
 import RecipeList from "./components/RecipeList";
 import GroceryList from './components/GroceryList';
 import FavouritesList from './components/FavouritesList';
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function App() {
 
-  const [mode, setMode] = useState(0);
-  const [nav, setNav] = useState(false);
-  const [recipe, setRecipe] = useState(false);
-  const [favourite, setFavourite] = useState(false);
+  const [state, setState] = useState({
+    nav: false,
+    mode: 0,
+    recipe: false,
+    recipies: [],
+    favourites: [],
+    ingredients: [],
+    groceryList: [],
+  });
+
+  const setNav = (nav) => setState((prev) => ({ ...prev, nav }));
+  const setMode = (mode) => setState((prev) => ({ ...prev, mode }));
+  const setRecipe = (recipe) => setState((prev) => ({ ...prev, recipe }));
+
+
+  useEffect(() => {
+    Promise.all([
+      axios.get("/api/recipies"),
+      axios.get("/api/ingredients"),
+      axios.get("/api/grocery_list"),
+    ]).then((all) => {
+      console.log(all);
+      setState((prev) => ({
+        ...prev,
+        recipies: all[0].data,
+        ingredients: all[1].data,
+        groceryList: all[2].data,
+      }));
+      console.log(state);
+    });
+  }, []);
 
   return (
     <div>
-      {!mode && !nav && <Home
-        mode={mode}
+      {!state.mode && !state.nav && <Home
+        mode={state.mode}
         setMode={setMode}
-        nav={nav}
+        nav={state.nav}
         setNav={setNav}
       />}
-      {nav && <Navigation
-        mode={mode}
+      {state.nav && <Navigation
+        mode={state.mode}
         setMode={setMode}
-        nav={nav}
+        nav={state.nav}
         setNav={setNav}
-        recipe={recipe}
+        recipe={state.recipe}
         setRecipe={setRecipe}
       />}
-      {mode === 1 && <About />}
-      {mode === 2 && <RecipeList
-        recipe={recipe}
+      {state.mode === 1 && <About />}
+      {state.mode === 2 && <RecipeList
+        recipe={state.recipe}
         setRecipe={setRecipe}
-        favourite={favourite}
-        setFavourite={setFavourite}
+        recipies={state.recipies}
       />}
-      {mode === 3 && <GroceryList />}
-      {mode === 4 && <FavouritesList
-        recipe={recipe}
+      {state.mode === 3 && <GroceryList />}
+      {state.mode === 4 && <FavouritesList
+        recipe={state.recipe}
         setRecipe={setRecipe}
-        favourite={favourite}
-        setFavourite={setFavourite}
       />}
     </div>
   );

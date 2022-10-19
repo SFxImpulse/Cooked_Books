@@ -9,7 +9,7 @@ function GroceryListItem(props) {
       <button className="grocery-list-item-x">
         <FontAwesomeIcon icon={faXmark} />
       </button>
-      <p className="grocery-list-item-text text--regular">This is an item in your grocery list.</p>
+      <p className="grocery-list-item-text text--regular"></p>
     </li>
   )
 };
