@@ -4,6 +4,16 @@ import { faPlus, faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function RecipeView(props) {
 
+  console.log(props.ids);
+
+  const ingredients = props.ingredients.map(ingredient => {
+    return (
+      <li>
+        <button><FontAwesomeIcon icon={faPlus} className="add-btn" /></button>{ingredient}
+      </li>
+    )
+  })
+
   return (
     <div className="recipe-view-background">
       <div className="recipe-view-container">
@@ -16,27 +26,14 @@ function RecipeView(props) {
         <div className='recipe-view-content'>
           <div className="recipe-view-info">
             <h2>Description</h2>
-            <p>I'm baby fanny pack chia readymade hexagon salvia pour-over kickstarter quinoa butcher keffiyeh copper mug four loko tousled. Shabby chic food truck biodiesel aesthetic scenester authentic. DSA vice actually vibecession stumptown irony. Distillery tote bag enamel pin before they sold out health goth next level, succulents snackwave fit swag. Normcore bespoke austin forage, crucifix la croix cronut chia bruh pok pok sriracha helvetica.</p>
+            <p>{props.description}</p>
             <h2>Instructions</h2>
-            <ol>
-              <li>Make batter.</li>
-              <li>Pour batter in batches.</li>
-              <li>Flip when golden brown on one side.</li>
-              <li>Serve with maple syrup and a slab of butter.</li>
-            </ol>
+            <p>{props.instructions}</p>
           </div>
           <div className="recipe-view-ingredients">
             <h2>Ingredients</h2>
             <ul>
-              <li>
-                <button><FontAwesomeIcon icon={faPlus} className="add-btn" /></button>Milk
-              </li>
-              <li>
-                <button><FontAwesomeIcon icon={faPlus} className="add-btn" /></button>Eggs
-              </li>
-              <li>
-                <button><FontAwesomeIcon icon={faPlus} className="add-btn" /></button>Flour
-              </li>
+              {ingredients}
             </ul>
           </div>
         </div>

@@ -7,9 +7,21 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function RecipeList(props) {
 
-  // const recipies = props.recipies.map(recipe => {
-
-  // })
+  const recipies = props.recipies.map(recipe => {
+    return (
+      <RecipeListItem
+        key={recipe.recipe_id}
+        name={recipe.recipe_name}
+        ids={recipe.ingredients_id}
+        ingredients={recipe.ingredients}
+        description={recipe.description}
+        instructions={recipe.instructions}
+        image={recipe.recipe_image}
+        recipe={props.recipe}
+        setRecipe={props.setRecipe}
+      />
+    )
+  })
 
   return (
     <div className="recipe-list-container">
@@ -31,12 +43,7 @@ function RecipeList(props) {
       </section>
       <h1 className="recipe-list-header text--bold">Recipe List</h1>
       <ul className="recipe-list">
-        <RecipeListItem
-          recipe={props.recipe}
-          setRecipe={props.setRecipe}
-          favourite={props.favourite}
-          setFavourite={props.setFavourite}
-        />
+        {recipies}
       </ul>
     </div>
   )

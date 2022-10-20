@@ -36,6 +36,7 @@ function App() {
       {state.mode === 2 && <RecipeList
         recipe={state.recipe}
         setRecipe={setRecipe}
+        recipies={state.recipies}
         // favourite={state.favourites}
         // setFavourite={setFavourites}
       />}
