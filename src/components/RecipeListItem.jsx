@@ -36,9 +36,10 @@ function RecipeListItem(props) {
         </div>
       </section>
       {props.recipe && <RecipeView
+        id={props.id}
         name={props.name}
         ids={props.ids}
-        ingredients={props.ingredients}
+        ingredients={props.ingredients_name}
         description={props.description}
         instructions={props.instructions}
         closeRecipeView={props.setRecipe}

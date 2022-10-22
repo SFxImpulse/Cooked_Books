@@ -7,13 +7,15 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function RecipeList(props) {
 
+  // console.log(props);
+
   const recipies = props.recipies.map(recipe => {
     return (
       <RecipeListItem
-        key={recipe.recipe_id}
+        id={recipe.recipe_id}
         name={recipe.recipe_name}
         ids={recipe.ingredients_id}
-        ingredients={recipe.ingredients}
+        ingredients_name={recipe.ingredients_name}
         description={recipe.description}
         instructions={recipe.instructions}
         image={recipe.recipe_image}

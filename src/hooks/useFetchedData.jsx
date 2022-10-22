@@ -33,6 +33,8 @@ function useFetchedData() {
     });
   }, []);
 
+  console.log(state);
+
   return { state, setNav, setMode, setRecipe };
 
 };
