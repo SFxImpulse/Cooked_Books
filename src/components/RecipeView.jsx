@@ -4,12 +4,10 @@ import { faPlus, faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function RecipeView(props) {
 
-  console.log(props);
-
   const ingredients = props.ingredients.map(ingredient => {
     return (
-      <li>
-        <button><FontAwesomeIcon icon={faPlus} className="add-btn" /></button>{ingredient}
+      <li key={ingredient.id}>
+        <button><FontAwesomeIcon icon={faPlus} className="add-btn" /></button>{ingredient.name}
       </li>
     )
   });

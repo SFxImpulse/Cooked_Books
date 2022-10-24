@@ -12,13 +12,12 @@ function RecipeList(props) {
   const recipies = props.recipies.map(recipe => {
     return (
       <RecipeListItem
-        id={recipe.recipe_id}
-        name={recipe.recipe_name}
-        ids={recipe.ingredients_id}
-        ingredients_name={recipe.ingredients_name}
+        key={recipe.id}
+        name={recipe.name}
+        ingredients={recipe.ingredients}
         description={recipe.description}
         instructions={recipe.instructions}
-        image={recipe.recipe_image}
+        image={recipe.image}
         recipe={props.recipe}
         setRecipe={props.setRecipe}
       />
