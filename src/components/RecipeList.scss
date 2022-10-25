@@ -25,17 +25,13 @@
     }
   }
   
-  
   .recipe-list-header {
     justify-content: center;
-    margin-top: 2em;
-    margin-bottom: 0.5em;
-    font-size: 32px;
+    margin-top: 1.5em;
   }
   
   .recipe-list {
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 3em;
   }
 }
