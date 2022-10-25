@@ -4,9 +4,11 @@ import { faPlus, faCheck, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function RecipeView(props) {
 
+  // console.log(props);
+
   const ingredients = props.ingredients.map(ingredient => {
     return (
-      <li key={ingredient.id}>
+      <li key={ingredient.id} id={ingredient.id}>
         <button><FontAwesomeIcon icon={faPlus} className="add-btn" /></button>{ingredient.name}
       </li>
     )
@@ -16,7 +18,12 @@ function RecipeView(props) {
     <div className="recipe-view-background">
       <div className="recipe-view-container">
         <div className="closeBtn">
-          <button onClick={() => props.closeRecipeView(false)}><FontAwesomeIcon icon={faXmark} /></button>
+          <button onClick={() => {
+            props.closeRecipeView(false)
+            props.setRecipeName("");
+          }}>
+            <FontAwesomeIcon icon={faXmark} />
+          </button>
         </div>
         <div className="recipe-view-title">
           <h1>{props.name}</h1>
@@ -39,7 +46,14 @@ function RecipeView(props) {
           <button id="confirm-btn">Save to Grocery List</button>
           {!props.favourite && <button id="save-btn" onClick={() => props.setFavourite(true)}>Favourite this Recipe</button>}
           {props.favourite && <button id="unsave-btn" onClick={() => props.setFavourite(false)}>Unfavourite this Recipe</button>}
-          <button id="cancel-btn" onClick={() => props.closeRecipeView(false)}>Cancel</button>
+          <button
+            id="cancel-btn"
+            onClick={() => {
+              props.closeRecipeView(false)
+              props.setRecipeName("");
+            }}>
+            Cancel
+          </button>
         </div>
       </div>
     </div>

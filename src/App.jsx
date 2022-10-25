@@ -13,8 +13,11 @@ function App() {
     state,
     setNav,
     setMode,
-    setRecipe
+    setRecipe,
+    setRecipeName,
   } = useFetchedData();
+
+  // console.log(state);
 
   return (
     <div>
@@ -36,6 +39,8 @@ function App() {
       {state.mode === 2 && <RecipeList
         recipe={state.recipe}
         setRecipe={setRecipe}
+        value={state.recipeName}
+        setRecipeName={setRecipeName}
         recipies={state.recipies}
         ingredients={state.ingredients}
         // favourite={state.favourites}

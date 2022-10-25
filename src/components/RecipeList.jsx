@@ -13,6 +13,7 @@ function RecipeList(props) {
     return (
       <RecipeListItem
         key={recipe.id}
+        id={recipe.id}
         name={recipe.name}
         ingredients={recipe.ingredients}
         description={recipe.description}
@@ -20,6 +21,9 @@ function RecipeList(props) {
         image={recipe.image}
         recipe={props.recipe}
         setRecipe={props.setRecipe}
+        value={props.value}
+        selected={recipe.name === props.value}
+        setRecipeName={props.setRecipeName}
       />
     )
   })

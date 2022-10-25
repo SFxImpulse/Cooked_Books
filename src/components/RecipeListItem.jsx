@@ -6,16 +6,16 @@ import { faStar, faPlus, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 function RecipeListItem(props) {
 
-  console.log(props);
-
   return (
-    <li>
+    <li selected={props.selected}>
       <section className="recipe-container">
         <img
           className="recipe-img"
           src={props.image}
           alt={props.name}
           onClick={() => {
+            console.log("Clicked on", props.name);
+            props.setRecipeName(props.name);
             props.setRecipe(true);
           }}
         />
@@ -35,12 +35,17 @@ function RecipeListItem(props) {
           {props.favourite && <FontAwesomeIcon icon={faStar} className="favourite-btn-true" onClick={() => {props.setFavourite(false)}} />}
         </div>
       </section>
-      {props.recipe && <RecipeView
+      {(props.recipe, props.selected) && <RecipeView
+        key={props.id}
+        id={props.id}
         name={props.name}
         ingredients={props.ingredients}
         description={props.description}
         instructions={props.instructions}
         closeRecipeView={props.setRecipe}
+        value={props.value}
+        selected={props.name === props.value}
+        setRecipeName={props.setRecipeName}
         // favourite={props.favourite}
         // setFavourite={props.setFavourite}
       />}
