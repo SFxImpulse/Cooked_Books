@@ -46,7 +46,9 @@ function App() {
         // favourite={state.favourites}
         // setFavourite={setFavourites}
       />}
-      {state.mode === 3 && <GroceryList />}
+      {state.mode === 3 && <GroceryList 
+        groceryList={state.groceryList}
+      />}
       {state.mode === 4 && <FavouritesList
         recipe={state.recipe}
         setRecipe={setRecipe}

@@ -18,6 +18,7 @@ function useFetchedData() {
   const setMode = (mode) => setState((prev) => ({ ...prev, mode }));
   const setRecipe = (recipe) => setState((prev) => ({ ...prev, recipe }));
   const setRecipeName = (recipeName) => setState((prev) => ({ ...prev, recipeName }));
+  const setGroceryList = (groceryList) => setState((prev) => ({ ...prev, groceryList}));
   // const setFavourites = (favourites) => setState((prev) => ({ ...prev, favourites }));
 
   useEffect(() => {

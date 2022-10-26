@@ -1,5 +1,7 @@
+import classNames from "classnames";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBlender } from "@fortawesome/free-solid-svg-icons";
+import { faBook, faBookOpen } from "@fortawesome/free-solid-svg-icons";
 
 import "./Navigation.scss";
 
@@ -7,7 +9,7 @@ function Navigation(props) {
 
   return (
     <nav className="navbar">
-      <FontAwesomeIcon icon={faBlender} className="nav-logo" onClick={() => {
+      <FontAwesomeIcon icon={faBookOpen} className="nav-logo" onClick={() => {
         props.setMode(0);
         props.setNav(false);
       }} />
