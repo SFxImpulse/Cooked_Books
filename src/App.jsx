@@ -15,6 +15,7 @@ function App() {
     setMode,
     setRecipe,
     setRecipeName,
+    setGroceryList,
   } = useFetchedData();
 
   // console.log(state);
@@ -48,6 +49,7 @@ function App() {
       />}
       {state.mode === 3 && <GroceryList 
         groceryList={state.groceryList}
+        setGroceryList={setGroceryList}
       />}
       {state.mode === 4 && <FavouritesList
         recipe={state.recipe}

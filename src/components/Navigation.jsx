@@ -1,7 +1,5 @@
-import classNames from "classnames";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBook, faBookOpen } from "@fortawesome/free-solid-svg-icons";
+import { faBookOpen } from "@fortawesome/free-solid-svg-icons";
 
 import "./Navigation.scss";
 

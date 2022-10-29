@@ -38,7 +38,7 @@ function useFetchedData() {
 
   // console.log(state);
 
-  return { state, setNav, setMode, setRecipe, setRecipeName };
+  return { state, setNav, setMode, setRecipe, setRecipeName, setGroceryList };
 
 };
 
