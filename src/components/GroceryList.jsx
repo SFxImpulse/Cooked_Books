@@ -5,20 +5,23 @@ function GroceryList(props) {
 
   console.log(props);
 
-  // const groceryList = props.groceryList.map(item => {
-  //   return (
-  //     <GroceryListItem 
-  //       key={}
-  //     />
-  //   )
-  // });
+  const groceryList = props.groceryList.map(item => {
+    return (
+      <GroceryListItem
+        key={item.id}
+        id={item.id}
+        name={item.name}
+        ingredients={item.ingredients}
+      />
+    )
+  });
   
   return(
     <div className="grocery-list-container">
-      <h1 className="grocery-list-header text--bold">Grocery List</h1>
+      <h1 className="grocery-list-header text--bold">{props.name}</h1>
       <section className="grocery-list-content">
         <ul className="grocery-list">
-          <GroceryListItem />
+          {groceryList}
         </ul>
       </section>
     </div>
