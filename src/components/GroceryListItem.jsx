@@ -5,9 +5,8 @@ import "./GroceryListItem.scss";
 
 function GroceryListItem(props) {
 
-  console.log(props);
-
   const ingredients = props.ingredients.map(ingredient => {
+    
     return (
       <li key={ingredient.id} className="grocery-list-item">
         <button className="grocery-list-item-x">

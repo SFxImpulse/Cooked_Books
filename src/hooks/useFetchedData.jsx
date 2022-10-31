@@ -18,7 +18,6 @@ function useFetchedData() {
   const setMode = (mode) => setState((prev) => ({ ...prev, mode }));
   const setRecipe = (recipe) => setState((prev) => ({ ...prev, recipe }));
   const setRecipeName = (recipeName) => setState((prev) => ({ ...prev, recipeName }));
-  const setGroceryList = (groceryList) => setState((prev) => ({ ...prev, groceryList}));
   // const setFavourites = (favourites) => setState((prev) => ({ ...prev, favourites }));
 
   useEffect(() => {
@@ -36,9 +35,23 @@ function useFetchedData() {
     });
   }, []);
 
-  // console.log(state);
+  // Function to add an ingredient to the grocery list.
+  const addToList = (ingredients) => {
+    const groceryList = [{
+      ...state.groceryList,
+      ingredients: { ...ingredients },
+    }];
+    return axios.put('/api/grocery_list', { ingredients }).then(() => {
+      setState([
+        ...state,
+        groceryList,
+      ]);
+    });
+  };
 
-  return { state, setNav, setMode, setRecipe, setRecipeName, setGroceryList };
+  console.log(state);
+
+  return { state, setNav, setMode, setRecipe, setRecipeName, addToList };
 
 };
 

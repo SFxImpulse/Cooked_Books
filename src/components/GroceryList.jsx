@@ -3,9 +3,8 @@ import "./GroceryList.scss";
 
 function GroceryList(props) {
 
-  console.log(props);
-
   const groceryList = props.groceryList.map(item => {
+
     return (
       <GroceryListItem
         key={item.id}
@@ -18,7 +17,7 @@ function GroceryList(props) {
   
   return(
     <div className="grocery-list-container">
-      <h1 className="grocery-list-header text--bold">{props.name}</h1>
+      <h1 className="grocery-list-header text--bold">{props.groceryList[0].name}</h1>
       <section className="grocery-list-content">
         <ul className="grocery-list">
           {groceryList}
