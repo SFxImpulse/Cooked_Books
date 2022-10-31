@@ -6,7 +6,7 @@ import "./GroceryListItem.scss";
 function GroceryListItem(props) {
 
   const ingredients = props.ingredients.map(ingredient => {
-    
+      
     return (
       <li key={ingredient.id} className="grocery-list-item">
         <button 
@@ -24,7 +24,7 @@ function GroceryListItem(props) {
 
   return (
     <div>
-      {ingredients}
+      {props.ingredients.length > 0 && ingredients}
     </div>
   )
 };

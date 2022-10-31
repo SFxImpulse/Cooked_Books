@@ -18,12 +18,16 @@ function GroceryList(props) {
   
   return(
     <div className="grocery-list-container">
-      <h1 className="grocery-list-header text--bold">{props.groceryList[0].name}</h1>
+      <h1 className="grocery-list-header text--bold">Grocery List</h1>
       <section className="grocery-list-content">
+      {props.groceryList.length > 0 && 
         <ul className="grocery-list">
           {groceryList}
-        </ul>
+        </ul>}
       </section>
+      {props.groceryList.length < 1 && 
+        <h2 className="text--bold">Your list is empty! Please look over our recipies and add some items to your list!</h2>
+      }
     </div>
   )
 };

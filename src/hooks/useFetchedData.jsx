@@ -70,7 +70,7 @@ function useFetchedData() {
     })
   }
 
-  console.log(state);
+  // console.log(state);
 
   return { state, setNav, setMode, setRecipe, setRecipeName, addToList, removeFromList };
 
