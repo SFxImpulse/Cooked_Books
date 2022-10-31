@@ -9,7 +9,10 @@ function RecipeView(props) {
   const ingredients = props.ingredients.map(ingredient => {
     return (
       <li key={ingredient.id} id={ingredient.id}>
-        <button><FontAwesomeIcon icon={faPlus} className="add-btn" /></button>{ingredient.name}
+        <button onClick={() => {
+          console.log("Clicked");
+          props.addToList(1, ingredient);
+        }}><FontAwesomeIcon icon={faPlus} className="add-btn"/></button>{ingredient.name}
       </li>
     )
   });
@@ -49,7 +52,7 @@ function RecipeView(props) {
           <button
             id="cancel-btn"
             onClick={() => {
-              props.closeRecipeView(false)
+              props.closeRecipeView(false);
               props.setRecipeName("");
             }}>
             Cancel

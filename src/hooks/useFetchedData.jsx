@@ -36,16 +36,20 @@ function useFetchedData() {
   }, []);
 
   // Function to add an ingredient to the grocery list.
-  const addToList = (ingredients) => {
+  const addToList = (id, ingredients) => {
+    const ingredientsList = [
+      ...state.groceryList[0].ingredients,
+      ingredients
+    ]
     const groceryList = [{
       ...state.groceryList,
-      ingredients: { ...ingredients },
+      ingredients: [ ...ingredientsList ]
     }];
-    return axios.put('/api/grocery_list', { ingredients }).then(() => {
-      setState([
+    return axios.put(`/api/grocery_list/${id}`, { ingredients }).then(() => {
+      setState({
         ...state,
-        groceryList,
-      ]);
+        groceryList
+      });
     });
   };
 

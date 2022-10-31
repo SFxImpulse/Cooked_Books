@@ -24,6 +24,7 @@ function RecipeList(props) {
         value={props.value}
         selected={recipe.name === props.value}
         setRecipeName={props.setRecipeName}
+        addToList={props.addToList}
       />
     )
   })

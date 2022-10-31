@@ -14,7 +14,6 @@ function RecipeListItem(props) {
           src={props.image}
           alt={props.name}
           onClick={() => {
-            console.log("Clicked on", props.name);
             props.setRecipeName(props.name);
             props.setRecipe(true);
           }}
@@ -46,6 +45,7 @@ function RecipeListItem(props) {
         value={props.value}
         selected={props.name === props.value}
         setRecipeName={props.setRecipeName}
+        addToList={props.addToList}
         // favourite={props.favourite}
         // setFavourite={props.setFavourite}
       />}

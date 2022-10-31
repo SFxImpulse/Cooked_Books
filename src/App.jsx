@@ -18,8 +18,6 @@ function App() {
     addToList,
   } = useFetchedData();
 
-  // console.log(state);
-
   return (
     <div>
       {!state.mode && !state.nav && <Home
