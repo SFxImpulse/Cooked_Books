@@ -40,7 +40,7 @@ function useFetchedData() {
     const ingredientsList = [
       ...state.groceryList[0].ingredients,
       ingredients
-    ]
+    ];
     const groceryList = [{
       ...state.groceryList,
       ingredients: [ ...ingredientsList ]
@@ -53,9 +53,26 @@ function useFetchedData() {
     });
   };
 
+  const removeFromList = (id, ingredients) => {
+    const ingredientsList = [
+      ...state.groceryList[0].ingredients,
+      null
+    ];
+    const groceryList = [{
+      ...state.groceryList,
+      ingredients: [ ...ingredientsList ]
+    }];
+    return axios.delete(`/api/grocery_list/${id}`, { ingredients }).then(() => {
+      setState({
+        ...state,
+        groceryList
+      })
+    })
+  }
+
   console.log(state);
 
-  return { state, setNav, setMode, setRecipe, setRecipeName, addToList };
+  return { state, setNav, setMode, setRecipe, setRecipeName, addToList, removeFromList };
 
 };
 
