@@ -9,7 +9,12 @@ function GroceryListItem(props) {
     
     return (
       <li key={ingredient.id} className="grocery-list-item">
-        <button className="grocery-list-item-x">
+        <button 
+          className="grocery-list-item-x" 
+          onClick={() => {
+            props.removeFromList(ingredient.id);
+          }}
+        >
           <FontAwesomeIcon icon={faXmark} />
         </button>
         <p className="grocery-list-item-text text--regular">{ingredient.name}</p>

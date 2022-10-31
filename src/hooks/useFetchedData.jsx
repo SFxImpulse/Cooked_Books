@@ -62,7 +62,7 @@ function useFetchedData() {
       ...state.groceryList,
       ingredients: [ ...ingredientsList ]
     }];
-    return axios.delete(`/api/grocery_list/${id}`, { ingredients }).then(() => {
+    return axios.delete(`/api/grocery_list/${id}`).then(() => {
       setState({
         ...state,
         groceryList

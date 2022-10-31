@@ -16,6 +16,7 @@ function App() {
     setRecipe,
     setRecipeName,
     addToList,
+    removeFromList,
   } = useFetchedData();
 
   return (
@@ -48,6 +49,7 @@ function App() {
       />}
       {state.mode === 3 && <GroceryList 
         groceryList={state.groceryList}
+        removeFromList={removeFromList}
       />}
       {state.mode === 4 && <FavouritesList
         recipe={state.recipe}

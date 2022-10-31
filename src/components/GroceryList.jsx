@@ -11,6 +11,7 @@ function GroceryList(props) {
         id={item.id}
         name={item.name}
         ingredients={item.ingredients}
+        removeFromList={props.removeFromList}
       />
     )
   });
