@@ -5,6 +5,8 @@ import "./GroceryListItem.scss";
 
 function GroceryListItem(props) {
 
+  console.log(props.ingredients);
+
   const ingredients = props.ingredients.map(ingredient => {
       
     return (
@@ -12,7 +14,7 @@ function GroceryListItem(props) {
         <button 
           className="grocery-list-item-x" 
           onClick={() => {
-            props.removeFromList(ingredient.id);
+            props.removeFromList(ingredient.id, props.ingredients);
           }}
         >
           <FontAwesomeIcon icon={faXmark} />

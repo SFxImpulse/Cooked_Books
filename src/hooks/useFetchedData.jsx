@@ -56,12 +56,11 @@ function useFetchedData() {
   const removeFromList = (id, ingredients) => {
     const ingredientsList = [
       ...state.groceryList[0].ingredients,
-      null
     ];
     const groceryList = [{
-      ...state.groceryList,
-      ingredients: [ ...ingredientsList ]
+      ingredients: [{ ...ingredientsList, [id]: null }]
     }];
+    console.log(state.groceryList);
     return axios.delete(`/api/grocery_list/${id}`).then(() => {
       setState({
         ...state,

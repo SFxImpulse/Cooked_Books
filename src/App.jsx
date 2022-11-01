@@ -47,7 +47,7 @@ function App() {
         // favourite={state.favourites}
         // setFavourite={setFavourites}
       />}
-      {state.mode === 3 && <GroceryList 
+      {state.mode === 3 && <GroceryList
         groceryList={state.groceryList}
         removeFromList={removeFromList}
       />}

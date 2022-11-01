@@ -10,7 +10,6 @@ function RecipeView(props) {
     return (
       <li key={ingredient.id} id={ingredient.id}>
         <button onClick={() => {
-          console.log("Clicked");
           props.addToList(1, ingredient);
         }}><FontAwesomeIcon icon={faPlus} className="add-btn"/></button>{ingredient.name}
       </li>
