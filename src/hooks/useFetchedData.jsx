@@ -53,14 +53,15 @@ function useFetchedData() {
     });
   };
 
-  const removeFromList = (id, ingredients) => {
-    const ingredientsList = [
-      ...state.groceryList[0].ingredients,
-    ];
+  const removeFromList = (id, ingredientObj, ingredients) => {
+    const itemToRemove = ingredients.indexOf(ingredientObj);
+    if (itemToRemove > -1) {
+      ingredients.splice(itemToRemove, 1);
+    }
     const groceryList = [{
-      ingredients: [{ ...ingredientsList, [id]: null }]
+      ...state.groceryList,
+      ingredients
     }];
-    console.log(state.groceryList);
     return axios.delete(`/api/grocery_list/${id}`).then(() => {
       setState({
         ...state,
@@ -69,7 +70,7 @@ function useFetchedData() {
     })
   }
 
-  // console.log(state);
+  console.log(state);
 
   return { state, setNav, setMode, setRecipe, setRecipeName, addToList, removeFromList };
 

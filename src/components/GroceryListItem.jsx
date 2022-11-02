@@ -14,7 +14,7 @@ function GroceryListItem(props) {
         <button 
           className="grocery-list-item-x" 
           onClick={() => {
-            props.removeFromList(ingredient.id, props.ingredients);
+            props.removeFromList(ingredient.id, ingredient, props.ingredients);
           }}
         >
           <FontAwesomeIcon icon={faXmark} />
