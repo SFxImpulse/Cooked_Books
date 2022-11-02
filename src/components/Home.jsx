@@ -11,7 +11,7 @@ function Home(props) {
       <h2
           className="nav-item text--bold"
           onClick={() => {
-            props.setMode(1);
+            props.setDisplay(1);
             props.setNav(true);
           }}
         >
@@ -20,7 +20,7 @@ function Home(props) {
         <h2
           className="nav-item text--bold"
           onClick={() => {
-            props.setMode(2);
+            props.setDisplay(2);
             props.setNav(true);
           }}
         >
@@ -29,7 +29,7 @@ function Home(props) {
         <h2
           className="nav-item text--bold"
           onClick={() => {
-            props.setMode(3);
+            props.setDisplay(3);
             props.setNav(true);
           }}
         >
@@ -38,7 +38,7 @@ function Home(props) {
         <h2
           className="nav-item text--bold"
           onClick={() => {
-            props.setMode(4);
+            props.setDisplay(4);
             props.setNav(true);
           }}
         >

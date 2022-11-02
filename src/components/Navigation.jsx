@@ -8,7 +8,7 @@ function Navigation(props) {
   return (
     <nav className="navbar">
       <FontAwesomeIcon icon={faBookOpen} className="nav-logo" onClick={() => {
-        props.setMode(0);
+        props.setDisplay(0);
         props.setNav(false);
       }} />
       <h2 className="nav-text">Cooked Books</h2>
@@ -17,7 +17,7 @@ function Navigation(props) {
         <h2
           className="nav-item text--bold"
           onClick={() => {
-            props.setMode(0);
+            props.setDisplay(0);
             props.setNav(false);
             props.setRecipe(false);
           }}
@@ -27,7 +27,7 @@ function Navigation(props) {
         <h2
           className="nav-item text--bold"
           onClick={() => {
-            props.setMode(1);
+            props.setDisplay(1);
             props.setNav(true);
             props.setRecipe(false);
           }}
@@ -37,7 +37,7 @@ function Navigation(props) {
         <h2
           className="nav-item text--bold"
           onClick={() => {
-            props.setMode(2);
+            props.setDisplay(2);
             props.setNav(true);
             props.setRecipe(false);
           }}
@@ -47,7 +47,7 @@ function Navigation(props) {
         <h2
           className="nav-item text--bold"
           onClick={() => {
-            props.setMode(3);
+            props.setDisplay(3);
             props.setNav(true);
             props.setRecipe(false);
           }}
@@ -57,7 +57,7 @@ function Navigation(props) {
         <h2
           className="nav-item text--bold"
           onClick={() => {
-            props.setMode(4);
+            props.setDisplay(4);
             props.setNav(true);
             props.setRecipe(false);
           }}

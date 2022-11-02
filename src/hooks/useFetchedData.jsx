@@ -5,7 +5,7 @@ function useFetchedData() {
 
   const [state, setState] = useState({
     nav: false,
-    mode: 0,
+    display: 0,
     recipe: false,
     recipeName: "",
     recipies: [],
@@ -15,7 +15,7 @@ function useFetchedData() {
   });
 
   const setNav = (nav) => setState((prev) => ({ ...prev, nav }));
-  const setMode = (mode) => setState((prev) => ({ ...prev, mode }));
+  const setDisplay = (display) => setState((prev) => ({ ...prev, display }));
   const setRecipe = (recipe) => setState((prev) => ({ ...prev, recipe }));
   const setRecipeName = (recipeName) => setState((prev) => ({ ...prev, recipeName }));
   // const setFavourites = (favourites) => setState((prev) => ({ ...prev, favourites }));
@@ -72,7 +72,7 @@ function useFetchedData() {
 
   console.log(state);
 
-  return { state, setNav, setMode, setRecipe, setRecipeName, addToList, removeFromList };
+  return { state, setNav, setDisplay, setRecipe, setRecipeName, addToList, removeFromList };
 
 };
 

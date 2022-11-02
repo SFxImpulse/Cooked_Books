@@ -12,7 +12,7 @@ function App() {
   const {
     state,
     setNav,
-    setMode,
+    setDisplay,
     setRecipe,
     setRecipeName,
     addToList,
@@ -21,22 +21,22 @@ function App() {
 
   return (
     <div>
-      {!state.mode && !state.nav && <Home
-        mode={state.mode}
-        setMode={setMode}
+      {!state.display && !state.nav && <Home
+        display={state.display}
+        setDisplay={setDisplay}
         nav={state.nav}
         setNav={setNav}
       />}
       {state.nav && <Navigation
-        mode={state.mode}
-        setMode={setMode}
+        display={state.display}
+        setDisplay={setDisplay}
         nav={state.nav}
         setNav={setNav}
         recipe={state.recipe}
         setRecipe={setRecipe}
       />}
-      {state.mode === 1 && <About />}
-      {state.mode === 2 && <RecipeList
+      {state.display === 1 && <About />}
+      {state.display === 2 && <RecipeList
         recipe={state.recipe}
         setRecipe={setRecipe}
         value={state.recipeName}
@@ -47,11 +47,11 @@ function App() {
         // favourite={state.favourites}
         // setFavourite={setFavourites}
       />}
-      {state.mode === 3 && <GroceryList
+      {state.display === 3 && <GroceryList
         groceryList={state.groceryList}
         removeFromList={removeFromList}
       />}
-      {state.mode === 4 && <FavouritesList
+      {state.display === 4 && <FavouritesList
         recipe={state.recipe}
         setRecipe={setRecipe}
         // favourite={state.favourites}
