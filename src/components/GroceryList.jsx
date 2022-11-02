@@ -23,7 +23,8 @@ function GroceryList(props) {
       {props.groceryList.length > 0 && 
         <ul className="grocery-list">
           {groceryList}
-        </ul>}
+        </ul>
+      }
       </section>
       {props.groceryList.length < 1 && 
         <h2 className="text--bold">Your list is empty! Please look over our recipies and add some items to your list!</h2>

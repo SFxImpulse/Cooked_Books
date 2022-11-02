@@ -5,8 +5,6 @@ import "./GroceryListItem.scss";
 
 function GroceryListItem(props) {
 
-  console.log(props.ingredients);
-
   const ingredients = props.ingredients.map(ingredient => {
       
     return (
