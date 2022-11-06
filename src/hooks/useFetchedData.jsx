@@ -36,7 +36,15 @@ function useFetchedData() {
   }, []);
 
   // Function to add an ingredient to the grocery list.
-  const addToList = (id, ingredients) => {
+  const addToList = (ingredients) => {
+    // if (!state.groceryList[0].ingredients) {
+    //   const ingredientsList = [];
+    //   setState({
+    //     ...state.groceryList,
+    //     ingredients: ingredientsList
+    //   })
+    //   console.log(state.groceryList[0]);
+    // }
     const ingredientsList = [
       ...state.groceryList[0].ingredients,
       ingredients
@@ -45,7 +53,7 @@ function useFetchedData() {
       ...state.groceryList,
       ingredients: [ ...ingredientsList ]
     }];
-    return axios.put(`/api/grocery_list/${id}`, { ingredients }).then(() => {
+    return axios.put(`/api/grocery_list/1`, { ingredients }).then(() => {
       setState({
         ...state,
         groceryList
@@ -53,7 +61,7 @@ function useFetchedData() {
     });
   };
 
-  const removeFromList = (id, ingredientObj, ingredients) => {
+  const removeFromList = (ingredientObj, ingredients) => {
     const itemToRemove = ingredients.indexOf(ingredientObj);
     if (itemToRemove > -1) {
       ingredients.splice(itemToRemove, 1);
@@ -62,7 +70,7 @@ function useFetchedData() {
       ...state.groceryList,
       ingredients
     }];
-    return axios.delete(`/api/grocery_list/${id}`).then(() => {
+    return axios.delete(`/api/grocery_list/1`).then(() => {
       setState({
         ...state,
         groceryList
@@ -70,7 +78,7 @@ function useFetchedData() {
     })
   }
 
-  // console.log(state);
+  console.log(state);
 
   return { state, setNav, setDisplay, setRecipe, setRecipeName, addToList, removeFromList };
 
