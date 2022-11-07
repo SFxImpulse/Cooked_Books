@@ -12,7 +12,7 @@ function FavouritesListItem(props) {
         setFavourite={props.setFavourite}
       />}
       {!props.favourite && <span className="empty-list-text text--regular">
-        Your favourites list is empty! Add some recipies you like.
+        Your favourites list is empty! Add some recipes you like.
         </span>}
     </li>
   )

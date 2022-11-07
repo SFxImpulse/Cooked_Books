@@ -9,7 +9,7 @@ function RecipeList(props) {
 
   // console.log(props);
 
-  const recipies = props.recipies.map(recipe => {
+  const recipes = props.recipes.map(recipe => {
     return (
       <RecipeListItem
         key={recipe.id}
@@ -49,7 +49,7 @@ function RecipeList(props) {
       </section>
       <h1 className="recipe-list-header text--bold">Recipe List</h1>
       <ul className="recipe-list">
-        {recipies}
+        {recipes}
       </ul>
     </div>
   )

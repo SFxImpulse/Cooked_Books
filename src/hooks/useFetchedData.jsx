@@ -8,7 +8,7 @@ function useFetchedData() {
     display: 0,
     recipe: false,
     recipeName: "",
-    recipies: [],
+    recipes: [],
     favourites: [],
     ingredients: [],
     groceryList: [],
@@ -22,13 +22,13 @@ function useFetchedData() {
 
   useEffect(() => {
     Promise.all([
-      axios.get("/api/recipies"),
+      axios.get("/api/recipes"),
       axios.get("/api/ingredients"),
       axios.get("/api/grocery_list"),
     ]).then((all) => {
       setState(prev => ({
         ...prev,
-        recipies: all[0].data,
+        recipes: all[0].data,
         ingredients: all[1].data,
         groceryList: all[2].data,
       }));
@@ -41,20 +41,24 @@ function useFetchedData() {
     let ingredientsList;
 
     if (!state.groceryList[0].ingredients[0].id) {
+
       ingredientsList = [
         ingredients
       ];
+
     } else {
+
       ingredientsList = [
         ...state.groceryList[0].ingredients,
         ingredients
       ];
     }
-    
+
     const groceryList = [{
       ...state.groceryList[0],
       ingredients: [ ...ingredientsList ]
     }];
+
     return axios.put(`/api/grocery_list/1`, { ingredients }).then(() => {
       setState({
         ...state,
@@ -64,21 +68,41 @@ function useFetchedData() {
   };
 
   const removeFromList = (ingredientObj, ingredients) => {
-    const itemToRemove = ingredients.indexOf(ingredientObj);
-    if (itemToRemove > -1) {
-      ingredients.splice(itemToRemove, 1);
+    
+    let groceryList;
+
+    if (ingredients.length === 1) {
+
+      const ingredientsList = [{
+        id: null,
+        name: null
+      }];
+
+      groceryList = [{
+        ...state.groceryList[0],
+        ingredients: [ ...ingredientsList ]
+      }];
+
+    } else {
+
+      const itemToRemove = ingredients.indexOf(ingredientObj);
+      if (itemToRemove > -1) {
+        ingredients.splice(itemToRemove, 1);
+      };
+
+      groceryList = [{
+        ...state.groceryList[0],
+        ingredients
+      }];
+
     }
-    const groceryList = [{
-      ...state.groceryList,
-      ingredients
-    }];
-    return axios.delete(`/api/grocery_list/1`).then(() => {
+    return axios.delete(`/api/grocery_list/1`, { data: ingredientObj }).then(() => {
       setState({
         ...state,
         groceryList
-      })
-    })
-  }
+      });
+    });
+  };
 
   // console.log(state);
 

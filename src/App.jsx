@@ -41,7 +41,7 @@ function App() {
         setRecipe={setRecipe}
         value={state.recipeName}
         setRecipeName={setRecipeName}
-        recipies={state.recipies}
+        recipes={state.recipes}
         ingredients={state.ingredients}
         addToList={addToList}
         // favourite={state.favourites}

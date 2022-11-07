@@ -21,6 +21,9 @@ function GroceryList(props) {
   return(
     <div className="grocery-list-container">
       <h1 className="grocery-list-header text--bold">Grocery List</h1>
+      {!props.groceryList[0].ingredients[0].id && 
+        <h2 className="grocery-list-warning text--bold">Your list is empty! Please look over our recipes and add some items to your list!</h2>
+      }
       <section className="grocery-list-content">
       {props.groceryList[0].ingredients[0].id && 
         <ul className="grocery-list">
@@ -28,9 +31,6 @@ function GroceryList(props) {
         </ul>
       }
       </section>
-      {!props.groceryList[0].ingredients[0].id && 
-        <h2 className="text--bold">Your list is empty! Please look over our recipies and add some items to your list!</h2>
-      }
     </div>
   )
 };

@@ -42,7 +42,7 @@ function Navigation(props) {
             props.setRecipe(false);
           }}
         >
-          Recipies
+          Recipes
         </h2>
         <h2
           className="nav-item text--bold"

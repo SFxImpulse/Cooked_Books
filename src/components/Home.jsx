@@ -5,7 +5,7 @@ function Home(props) {
     <section className="home-content-container">
       <div className="welcome-container">
         <h1 className="text--bold">Welcome to Cooked Books!</h1>
-        <p className="text--regular">Start browsing our recipies and create your grocery list!</p>
+        <p className="text--regular">Start browsing our recipes and create your grocery list!</p>
       </div>
       <div className="nav-item-container">
       <h2
@@ -24,7 +24,7 @@ function Home(props) {
             props.setNav(true);
           }}
         >
-          Recipies
+          Recipes
         </h2>
         <h2
           className="nav-item text--bold"
