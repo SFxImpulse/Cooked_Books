@@ -3,7 +3,7 @@ import "./GroceryList.scss";
 
 function GroceryList(props) {
 
-  console.log(props);
+  // console.log(props);
 
   const groceryList = props.groceryList.map(item => {
 

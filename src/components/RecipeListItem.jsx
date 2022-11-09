@@ -28,10 +28,10 @@ function RecipeListItem(props) {
             icon={faStar}
             className="favourite-btn-false"
             onClick={() => {
-              props.setFavourite(true);
+              props.setFavourites(true);
             }}
           />}
-          {props.favourite && <FontAwesomeIcon icon={faStar} className="favourite-btn-true" onClick={() => {props.setFavourite(false)}} />}
+          {props.favourite && <FontAwesomeIcon icon={faStar} className="favourite-btn-true" onClick={() => {props.setFavourites(false)}} />}
         </div>
       </section>
       {(props.recipe, props.selected) && <RecipeView
@@ -46,8 +46,7 @@ function RecipeListItem(props) {
         selected={props.name === props.value}
         setRecipeName={props.setRecipeName}
         addToList={props.addToList}
-        // favourite={props.favourite}
-        // setFavourite={props.setFavourite}
+        setFavourite={props.setFavourite}
       />}
     </li>
   )

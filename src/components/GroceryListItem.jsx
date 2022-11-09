@@ -5,7 +5,7 @@ import "./GroceryListItem.scss";
 
 function GroceryListItem(props) {
 
-  console.log(props);
+  // console.log(props);
 
   if (!props.ingredients) {
 

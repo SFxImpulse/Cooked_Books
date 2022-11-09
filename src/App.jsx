@@ -17,6 +17,7 @@ function App() {
     setRecipeName,
     addToList,
     removeFromList,
+    setFavourites
   } = useFetchedData();
 
   return (
@@ -44,8 +45,8 @@ function App() {
         recipes={state.recipes}
         ingredients={state.ingredients}
         addToList={addToList}
-        // favourite={state.favourites}
-        // setFavourite={setFavourites}
+        favourites={state.favourites}
+        setFavourites={setFavourites}
       />}
       {state.display === 3 && <GroceryList
         groceryList={state.groceryList}
@@ -54,8 +55,11 @@ function App() {
       {state.display === 4 && <FavouritesList
         recipe={state.recipe}
         setRecipe={setRecipe}
-        // favourite={state.favourites}
-        // setFavourite={setFavourites}
+        setRecipeName={setRecipeName}
+        recipes={state.recipes}
+        ingredients={state.ingredients}
+        addToList={addToList}
+        setFavourite={setFavourites}
       />}
     </div>
   );
