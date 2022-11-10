@@ -3,10 +3,11 @@ import "./RecipeListItem.scss";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStar, faPlus, faCheck } from "@fortawesome/free-solid-svg-icons";
+import FavouritesList from "./FavouritesList";
 
 function RecipeListItem(props) {
 
-  console.log(props);
+  // console.log(props);
 
   return (
     <li selected={props.selected}>
@@ -30,7 +31,6 @@ function RecipeListItem(props) {
             icon={faStar}
             className="favourite-btn-false"
             onClick={() => {
-              props.setFavourites(props.id);
               props.manageFavourites(props.id);
             }}
           />}
@@ -38,7 +38,6 @@ function RecipeListItem(props) {
             icon={faStar}
             className="favourite-btn-true"
             onClick={() => {
-              props.setFavourites(props.id);
               props.manageFavourites(props.id);
             }}
           />}

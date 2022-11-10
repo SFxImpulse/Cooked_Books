@@ -18,7 +18,6 @@ function useFetchedData() {
   const setDisplay = (display) => setState((prev) => ({ ...prev, display }));
   const setRecipe = (recipe) => setState((prev) => ({ ...prev, recipe }));
   const setRecipeName = (recipeName) => setState((prev) => ({ ...prev, recipeName }));
-  const setFavourites = (favourites) => setState((prev) => ({ ...prev, favourites }));
 
   useEffect(() => {
     Promise.all([
@@ -113,21 +112,21 @@ function useFetchedData() {
       favourite = false;
       state.recipes[id - 1].favourite = favourite;
     }
-    const recipes = [{
-      ...state.recipes[id - 1],
-    }];
-
+    const favourites = [
+      ...state.favourites,
+      id
+    ];
     return axios.put(`/api/recipes/${id}`, { favourite }).then(() => {
       setState({
         ...state,
-        recipes
+        favourites
       });
     });
   };
 
   // console.log(state);
 
-  return { state, setNav, setDisplay, setRecipe, setRecipeName, addToList, removeFromList, setFavourites, manageFavourites };
+  return { state, setNav, setDisplay, setRecipe, setRecipeName, addToList, removeFromList, manageFavourites };
 
 };
 
