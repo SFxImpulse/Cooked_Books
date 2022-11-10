@@ -106,17 +106,18 @@ function useFetchedData() {
 
   const manageFavourites = (id) => {
     let favourite;
-    if (!state.recipes[id].favourite) {
+    if (!state.recipes[id - 1].favourite) {
       favourite = true;
+      state.recipes[id - 1].favourite = favourite;
     } else {
       favourite = false;
+      state.recipes[id - 1].favourite = favourite;
     }
     const recipes = [{
-      ...state.recipes[id].favourite,
-      favourite
-    }]
+      ...state.recipes[id - 1],
+    }];
 
-    return axios.patch(`/api/recipes/${id}`, { favourite }).then(() => {
+    return axios.put(`/api/recipes/${id}`, { favourite }).then(() => {
       setState({
         ...state,
         recipes
@@ -124,7 +125,7 @@ function useFetchedData() {
     });
   };
 
-  console.log(state);
+  // console.log(state);
 
   return { state, setNav, setDisplay, setRecipe, setRecipeName, addToList, removeFromList, setFavourites, manageFavourites };
 

@@ -17,7 +17,8 @@ function App() {
     setRecipeName,
     addToList,
     removeFromList,
-    setFavourites
+    setFavourites,
+    manageFavourites
   } = useFetchedData();
 
   return (
@@ -47,6 +48,7 @@ function App() {
         addToList={addToList}
         favourites={state.favourites}
         setFavourites={setFavourites}
+        manageFavourites={manageFavourites}
       />}
       {state.display === 3 && <GroceryList
         groceryList={state.groceryList}
