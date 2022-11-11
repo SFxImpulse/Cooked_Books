@@ -112,10 +112,7 @@ function useFetchedData() {
       favourite = false;
       state.recipes[id - 1].favourite = favourite;
     }
-    const favourites = [
-      ...state.favourites,
-      id
-    ];
+    const favourites = state.recipes.filter(recipe => recipe.favourite);
     return axios.put(`/api/recipes/${id}`, { favourite }).then(() => {
       setState({
         ...state,
