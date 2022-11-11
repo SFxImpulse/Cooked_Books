@@ -4,17 +4,22 @@ import "./FavouritesListItem.scss";
 
 function FavouritesListItem(props) {
   return (
-    <li>
-      {props.favourite && <RecipeListItem
-        recipe={props.recipe}
-        setRecipe={props.setRecipe}
-        favourite={props.favourite}
-        setFavourite={props.setFavourite}
-      />}
-      {!props.favourite && <span className="empty-list-text text--regular">
-        Your favourites list is empty! Add some recipes you like.
-        </span>}
-    </li>
+    <RecipeListItem
+      key={props.id}
+      id={props.id}
+      name={props.name}
+      ingredients={props.ingredients}
+      description={props.description}
+      instructions={props.instructions}
+      image={props.image}
+      props={props.favourite}
+      setRecipe={props.setRecipe}
+      value={props.value}
+      setRecipeName={props.setRecipeName}
+      addToList={props.addToList}
+      favourites={props.favourites}
+      manageFavourites={props.manageFavourites}
+    />
   )
 };
 

@@ -53,6 +53,7 @@ function App() {
         removeFromList={removeFromList}
       />}
       {state.display === 4 && <FavouritesList
+        favourites={state.favourites}
         recipe={state.recipe}
         setRecipe={setRecipe}
         setRecipeName={setRecipeName}

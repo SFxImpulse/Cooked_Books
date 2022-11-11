@@ -7,7 +7,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 function RecipeList(props) {
 
-  console.log(props);
+  // console.log(props);
 
   const recipes = props.recipes.map(recipe => {
     return (
