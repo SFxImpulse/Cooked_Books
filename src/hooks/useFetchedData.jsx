@@ -24,12 +24,14 @@ function useFetchedData() {
       axios.get("/api/recipes"),
       axios.get("/api/ingredients"),
       axios.get("/api/grocery_list"),
+      axios.get("/api/favourites")
     ]).then((all) => {
       setState(prev => ({
         ...prev,
         recipes: all[0].data,
         ingredients: all[1].data,
         groceryList: all[2].data,
+        favourites: all[3].data[0]
       }));
     });
   }, []);
